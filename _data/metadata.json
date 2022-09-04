@@ -1,21 +1,21 @@
 {
-  "title": "Your Blog Name",
-  "url": "https://example.com/",
+  "title": "Daria Dobszai's portfolio",
+  "url": "https://djani97.github.io/dasha-eleventy-base-blog/",
   "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "TODO",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "TODO",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://example.com/"
+    "id": "https://djani97.github.io/dasha-eleventy-base-blog/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
+    "url": "https://djani97.github.io/dasha-eleventy-base-blog/feed/feed.json"
   },
   "author": {
-    "name": "Your Name Here",
+    "name": "TODO",
     "email": "youremailaddress@example.com",
-    "url": "https://example.com/about-me/"
+    "url": "https://djani97.github.io/dasha-eleventy-base-blog/about-me/"
   }
 }
