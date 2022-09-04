@@ -3,5 +3,36 @@
 @tailwind utilities;
 
 .tmpl-post {
-  @apply bg-red-300 mx-40;
+  @apply lg:mx-40 md:mx-20 sm:mx-10;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3 {
+  @apply capitalize font-bold py-2;
+}
+h1 {
+  @apply text-3xl;
+}
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-xl;
+}
+p {
+  @apply pb-1;
+}
+main {
+  @apply py-10 px-5;
+}
+a {
+  /* @apply link; */
+}
+
+.direct-link {
+  @apply link link-hover text-gray-400 hover:text-gray-500 font-normal;
 }

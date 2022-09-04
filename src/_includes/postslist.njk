@@ -1,12 +1,19 @@
-<ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-{% for post in postslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-    {% for tag in post.data.tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-    {% endfor %}
-  </li>
-{% endfor %}
-</ol>
+{# <div class="not-prose grid gap-x-6 gap-y-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> #}
+<div class="not-prose grid gap-x-6 gap-y-12 grid-cols-1 sm:grid-cols-2">
+  {% for post in postslist | reverse %}
+    <a class="card card-compact hover:bg-base-200 transition-all duration-200 hover:-translate-y-1" href="{{ post.url | url }}">
+      <figure class="px-4 pt-4"><img src="{{ post.data.img | url }}" class="mx-auto max-h-96 px-5 rounded-btn m-5" alt="{{title}}" class="border-base-content bg-base-300 rounded-lg border border-opacity-5" alt="Alert"></figure>
+      {# <div class="card-body">
+        <h2 class="card-title">
+          {{ post.data.title }}
+          {% for tag in post.data.tags | filterTagList %}
+            {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+            <div class="badge badge-secondary" >{{ tag }}</div>
+          {% endfor %}
+        </h2>
+        <time class="text-xs opacity-60" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        <div class="text-s">{{ post.data.description }}</div>
+      </div> #}
+    </a>
+  {% endfor %}
+</div>

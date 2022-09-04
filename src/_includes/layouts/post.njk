@@ -2,6 +2,11 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
+
+{%- if img %}
+  <img src="{{ img | url }}" class="mx-auto max-h-96 px-5 rounded-btn m-5" alt="{{title}}">
+{%- endif %}
+
 <h1>{{ title }}</h1>
 
 <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
@@ -12,17 +17,20 @@ templateClass: tmpl-post
 
 {{ content | safe }}
 
+<br/>
+<br/>
+
 {%- if collections.posts %}
   {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
   {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
   {%- if nextPost or previousPost %}
-    <hr>
+    <div class="divider"></div>
     <div class="btn-group">
       {%- if nextPost %}
-        <a class="btn btn-outline" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+        <a class="btn btn-outline" href="{{ nextPost.url | url }}">Next project: {{ nextPost.data.title }}</a>
       {% endif %}
       {%- if previousPost %}
-        <a class="btn btn-outline" href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+        <a class="btn btn-outline" href="{{ previousPost.url | url }}">Previous project: {{ previousPost.data.title }}</a>
       {% endif %}
     </div>
   {%- endif %}
