@@ -11,7 +11,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("src/img");
-  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/css/index.css");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -63,6 +63,7 @@ module.exports = function(eleventyConfig) {
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
+    breaks: true,
     linkify: true
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tmpl-post {
+  @apply bg-red-300 mx-40;
+}
